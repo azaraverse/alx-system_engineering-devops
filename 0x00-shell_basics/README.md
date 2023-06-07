@@ -1,2 +1,3 @@
-pwd This script prints the absolute path name of the current working directory
-ls This script displays the content of the current working directory
+1. pwd This script prints the absolute path name of the current working directory
+2. ls This script displays the content of the current working directory
+3. cd This script changes the working directory to the user’s home directory
