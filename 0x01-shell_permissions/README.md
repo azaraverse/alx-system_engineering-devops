@@ -6,4 +6,5 @@
 5. chmod u+x hello - This script adds execution permission to the file 'hello'.
 6. chmod ug+x, o+r hello - This script adds execution permit to owner and group owners and read only permit to other users for the file 'hello'.
 7. chmod ugo+x hello - This script adds execution permission to the owner, the group and others for the file 'hello'.
-8. 
+8. chmod 007 hello - This script removes all permissions from user and group and adds all pwermissions to other users for the file 'hello'.
+9. 
