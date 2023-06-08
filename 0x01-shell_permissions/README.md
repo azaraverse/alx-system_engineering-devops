@@ -14,3 +14,4 @@
 13. chgrp school hello - This script chnages the owner of the file 'hello' to school.
 14. chown vincent:staff - This script changes the owner of all files and dir to vincent and group owner to staff.
 15. chown -h vincent:staff _hello - This script changes the owner and group owner to vincent and staff respectively of the file 'hello'.
+16. chown --from=guillaume betty hello - This script changes the owner of the file hello to betty only if the file is owned by guillaume.
