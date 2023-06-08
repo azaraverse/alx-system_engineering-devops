@@ -11,3 +11,5 @@
 10. chmod --reference=olleh hello - This script sets the mode of the file 'hello' the same as 'olleh's' mode.
 11. chmod -R +x - This script adds an execute permission to all subdir of the current dir for owner, group owner and other users without affecting regular files.
 12. mkdir -m 751 my_dir - This script creates a dir named my_dir with 751 as permissions.
+13. chgrp school hello - This script chnages the owner of the file 'hello' to school.
+14. chown vincent:staff - This script changes the owner of all files and dir to vincent and group owner to staff.
