@@ -9,3 +9,4 @@
 8. chmod 007 hello - This script removes all permissions from user and group and adds all pwermissions to other users for the file 'hello'.
 9. chmod 753 hello - This script gives read, write and execute permission to user, read and execute permission to group and write and execute permission to other users for the file 'hello'.
 10. chmod --reference=olleh hello - This script sets the mode of the file 'hello' the same as 'olleh's' mode.
+11. chmod -R +x - This script adds an execute permission to all subdir of the current dir for owner, group owner and other users without affecting regular files.
