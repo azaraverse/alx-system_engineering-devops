@@ -13,3 +13,4 @@
 12. mkdir -m 751 my_dir - This script creates a dir named my_dir with 751 as permissions.
 13. chgrp school hello - This script chnages the owner of the file 'hello' to school.
 14. chown vincent:staff - This script changes the owner of all files and dir to vincent and group owner to staff.
+15. chown -h vincent:staff _hello - This script changes the owner and group owner to vincent and staff respectively of the file 'hello'.
