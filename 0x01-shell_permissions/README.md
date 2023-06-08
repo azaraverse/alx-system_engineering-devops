@@ -8,4 +8,4 @@
 7. chmod ugo+x hello - This script adds execution permission to the owner, the group and others for the file 'hello'.
 8. chmod 007 hello - This script removes all permissions from user and group and adds all pwermissions to other users for the file 'hello'.
 9. chmod 753 hello - This script gives read, write and execute permission to user, read and execute permission to group and write and execute permission to other users for the file 'hello'.
-10. 
+10. chmod --reference=olleh hello - This script sets the mode of the file 'hello' the same as 'olleh's' mode.
