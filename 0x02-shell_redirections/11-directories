@@ -1,0 +1,2 @@
+#!/bin/bash
+find . -type d \( -name '.*' -prune -o -print \) | wc -1
