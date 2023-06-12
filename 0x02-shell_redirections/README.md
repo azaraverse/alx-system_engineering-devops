@@ -22,4 +22,5 @@
 21. rev - This script reverses inputs.
 22. cut -d : -f 1,6 /etc/passwd | sort - This script displays all users and their home dir, sorted by users based on the /etc/passwd file.
 23. find . -empty -printf "%f\n" - This script or command finds all empty files and dir and subdir in the current dir.
-24. 
+24. find . -name "*.gif" -type f -printf "%f\n" | rev | cut -d. -f2- | rev | LC_ALL=C sort -f -
+25. 
