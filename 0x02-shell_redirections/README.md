@@ -8,4 +8,5 @@
 8. echo 'Best School' > '\*\\'\''"Best School"\'\''\\*$\?\*\*\*\*\*:)' - This script creates a file with the given name with 'Best School' contained in the file. The single quotes '' at the beginning and end of the second part of the code protects the text so it has it serves its literal purpose.
 9. ls -la > ls_cwd_content - This script writes the content of ls -la into ls_cwd_content.
 10. tail -n 1 iacta >> iacta - This script duplicates the last line of the file 'iacta'.
-11. 
+11. find . -type f -name "*.js" -exec rm {} + - This script finds all regular files with ".js" as an extension within the current working dir and its subdir, then executes the delete command.
+12. 
