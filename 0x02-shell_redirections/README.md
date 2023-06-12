@@ -17,4 +17,5 @@
 16. grep root /etc.passwd --after-context=3 - This script displays lines containing the pattern 'root' and 3 lines after them in the /etc/passwd file.
 17. grep -v bin /etc/passwd - This script displays all the lines in the file /etc/passwd that do not contain the pattern 'bin'.
 18. grep '^[[:alpha:]]' /etc/ssh/sshd_config - This script displays all lines of the file /etc/ssh/sshd_config starting with a letter + capital letters.
-19. 
+19. tr A Z | tr c e - This script replaces A with Z and c with e.
+20. 
