@@ -1,15 +1,15 @@
-1. echo 'Hello, World' - This script prints "Hello, World" followed by a new line to the standard output.
-2. echo "\"(Ôo)" - This script prints a confused smiley emoji.
-3. cat /etc/passwd - This script displays the content of the '/etc/passwd' file.
-4. cat /etc/passwd /etc/hosts - This script displays the content of two files at the same time.
-5. tail -n 10 /etc/passwd - This script displays the last 10 lines of the '/etc/passwd' file. 
-6. head -n 10 /etc/passwd - This script displays the first 10 lines of the '/etc/passwd' file.
-7. head -n 3 iacta | tail -n 1 - This script displays the third line of the 'iacta' file.
-8. echo 'Best School' > '\*\\'\''"Best School"\'\''\\*$\?\*\*\*\*\*:)' - This script creates a file with the given name with 'Best School' contained in the file. The single quotes '' at the beginning and end of the second part of the code protects the text so it has it serves its literal purpose.
-9. ls -la > ls_cwd_content - This script writes the content of ls -la into ls_cwd_content.
-10. tail -n 1 iacta >> iacta - This script duplicates the last line of the file 'iacta'.
-11. find . -type f -name "*.js" -exec rm {} + - This script finds all regular files with ".js" as an extension within the current working dir and its subdir, then executes the delete command.
-12. find . -mindepth 1 -type d | wc -l - This script counts the number of dir and subdir (+ hidden) in the current dir excluding current and parent dir.
-13. ls -t | head -n 10 - This script displays the newest lines in the current dir sorted from newest to oldest.
-14. sort | uniq -u - This script prints only words that appear once from a given list.
-15. 
+0. echo 'Hello, World' - This script prints "Hello, World" followed by a new line to the standard output.
+1. echo "\"(Ôo)" - This script prints a confused smiley emoji.
+2. cat /etc/passwd - This script displays the content of the '/etc/passwd' file.
+3. cat /etc/passwd /etc/hosts - This script displays the content of two files at the same time.
+4. tail -n 10 /etc/passwd - This script displays the last 10 lines of the '/etc/passwd' file. 
+5. head -n 10 /etc/passwd - This script displays the first 10 lines of the '/etc/passwd' file.
+6. head -n 3 iacta | tail -n 1 - This script displays the third line of the 'iacta' file.
+7. echo 'Best School' > '\*\\'\''"Best School"\'\''\\*$\?\*\*\*\*\*:)' - This script creates a file with the given name with 'Best School' contained in the file. The single quotes '' at the beginning and end of the second part of the code protects the text so it has it serves its literal purpose.
+8. ls -la > ls_cwd_content - This script writes the content of ls -la into ls_cwd_content.
+9. tail -n 1 iacta >> iacta - This script duplicates the last line of the file 'iacta'.
+10. find . -type f -name "*.js" -exec rm {} + - This script finds all regular files with ".js" as an extension within the current working dir and its subdir, then executes the delete command.
+11. find . -mindepth 1 -type d | wc -l - This script counts the number of dir and subdir (+ hidden) in the current dir excluding current and parent dir.
+12. ls -t | head -n 10 - This script displays the newest lines in the current dir sorted from newest to oldest.
+13. sort | uniq -u - This script prints only words that appear once from a given list.
+14. grep root /etc/passwd - This script displays lines containing the pattern 'root' from the file /etc/passwd.
