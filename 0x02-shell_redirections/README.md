@@ -19,4 +19,5 @@
 18. grep '^[[:alpha:]]' /etc/ssh/sshd_config - This script displays all lines of the file /etc/ssh/sshd_config starting with a letter + capital letters.
 19. tr A Z | tr c e - This script replaces A with Z and c with e.
 20. tr -d c | tr -d C - This script removes all letters c and C from a file.
-21. 
+21. rev - This script reverses inputs.
+22. 
