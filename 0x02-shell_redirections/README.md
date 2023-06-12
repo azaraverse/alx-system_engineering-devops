@@ -13,3 +13,4 @@
 12. ls -t | head -n 10 - This script displays the newest lines in the current dir sorted from newest to oldest.
 13. sort | uniq -u - This script prints only words that appear once from a given list.
 14. grep root /etc/passwd - This script displays lines containing the pattern 'root' from the file /etc/passwd.
+15. grep -c bin /etc/passwd - This script displays the number of lines that contain the pattern bin from the /etc/passwd file.
