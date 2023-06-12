@@ -10,4 +10,5 @@
 10. tail -n 1 iacta >> iacta - This script duplicates the last line of the file 'iacta'.
 11. find . -type f -name "*.js" -exec rm {} + - This script finds all regular files with ".js" as an extension within the current working dir and its subdir, then executes the delete command.
 12. find . -mindepth 1 -type d | wc -l - This script counts the number of dir and subdir (+ hidden) in the current dir excluding current and parent dir.
-13. 
+13. ls -t | head -n 10 - This script displays the newest lines in the current dir sorted from newest to oldest.
+14. 
