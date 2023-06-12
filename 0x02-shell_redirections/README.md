@@ -14,3 +14,5 @@
 13. sort | uniq -u - This script prints only words that appear once from a given list.
 14. grep root /etc/passwd - This script displays lines containing the pattern 'root' from the file /etc/passwd.
 15. grep -c bin /etc/passwd - This script displays the number of lines that contain the pattern bin from the /etc/passwd file.
+16. grep root /etc.passwd --after-context=3 - This script displays lines containing the pattern 'root' and 3 lines after them in the /etc/passwd file.
+17. 
