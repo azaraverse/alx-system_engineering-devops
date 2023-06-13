@@ -11,3 +11,4 @@
 10. echo $(($BREATH**$LOVE)) - This script prints the results of BREATH exponent LOVE.
 11. echo $((2#$BINARY)) - This script converts a number from base 2 to base 10 from the BINARY var.
 12. 
+13. echo $NUM - This script prints a number with two decimal places. The number is stored in the env var NUM.
