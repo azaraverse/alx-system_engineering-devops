@@ -5,4 +5,5 @@
 4. printenv - This script lists environment variables.
 5. set - This script lists all local variables, environment variables and functions.
 6. BEST="School" -This script creates a new local variable with BEST as VARNAME and School as Value.
-7. 
+7. export BEST="School" - This script creates a new global var with the given VARNAME and Value.
+8. 
