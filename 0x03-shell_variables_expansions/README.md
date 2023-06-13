@@ -10,5 +10,6 @@
 9. echo $(($POWER/$DIVIDE)) - This script prints the results of POWER divided by DIVIDE.
 10. echo $(($BREATH**$LOVE)) - This script prints the results of BREATH exponent LOVE.
 11. echo $((2#$BINARY)) - This script converts a number from base 2 to base 10 from the BINARY var.
-12. 
+12. printf "%s\n" {a..z}{a..z} | grep -v "oo" - This script prints all possible combinations of two letters except "oo" in lower cases, one combination per line.
 13. printf "%.2f\n" $NUM - This script prints a number with two decimal places. The number is stored in the env var NUM.
+14. 
