@@ -8,3 +8,5 @@
 7. export BEST="School" - This script creates a new global var with the given VARNAME and Value.
 8. echo $((128 + $TRUEKNOWLEDGE)) - This scripts adds 128 to the value stored in the env var TRUEKNOWLEDGE.
 9. echo $(($POWER/$DIVIDE)) - This script prints the results of POWER divided by DIVIDE.
+10. echo $(($BREATH**$LOVE)) - This script prints the results of BREATH exponent LOVE.
+11. 
