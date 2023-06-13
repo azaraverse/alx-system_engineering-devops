@@ -24,4 +24,4 @@
 23. find . -empty -printf "%f\n" - This script or command finds all empty files and dir and subdir in the current dir.
 24. find . -name "*.gif" -type f -printf "%f\n" | rev | cut -d. -f2- | rev | LC_ALL=C sort -f -
 25. echo $(cut -c1 | tr -d " \n") - This script decodes acrostics that use the first letter of each line.
-26. tail -n +2 | sort -k 1 | cut -f -1 | uniq -c | sort -mk 1 | head -n 11 | rev | cut -d' ' -f -1 | rev - This script parses web servers logs in TSV format as input and displays the 11 hosts or IP addresses which did the most requests.
+26. tail -n +2 | cut -f -1 | sort -k 1 | uniq -c | sort -mk 1 | head -n 11 | rev | cut -d' ' -f -1 | rev - This script parses web servers logs in TSV format as input and displays the 11 hosts or IP addresses which did the most requests.
