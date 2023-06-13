@@ -4,4 +4,5 @@
 3. echo $PATH | tr -s ":" "\n" | wc -l - This script counts the number of dir in the PATH.
 4. printenv - This script lists environment variables.
 5. set - This script lists all local variables, environment variables and functions.
-6. 
+6. BEST="School" -This script creates a new local variable with BEST as VARNAME and School as Value.
+7. 
