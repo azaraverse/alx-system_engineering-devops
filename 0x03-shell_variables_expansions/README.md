@@ -12,5 +12,5 @@
 11. echo $((2#$BINARY)) - This script converts a number from base 2 to base 10 from the BINARY var.
 12. printf "%s\n" {a..z}{a..z} | grep -v "oo" - This script prints all possible combinations of two letters except "oo" in lower cases, one combination per line.
 13. printf "%.2f\n" $NUM - This script prints a number with two decimal places. The number is stored in the env var NUM.
-14. echo $((10#$DECIMAL)) - This script converts a number from base 10 to base 16 from the DECIMAL env var.
+14. echo "ibase=10; obase=16; $DECIMAL" | bc - This script converts a number from base 10 to base 16 from the DECIMAL env var.
 15. 
