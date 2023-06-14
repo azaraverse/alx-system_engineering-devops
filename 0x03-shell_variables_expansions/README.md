@@ -14,5 +14,5 @@
 13. printf "%.2f\n" $NUM - This script prints a number with two decimal places. The number is stored in the env var NUM.
 14. printf "%x\n" $DECIMAL - This script converts a number from base 10 to base 16 from the DECIMAL env var.
 15. tr 'A-Za-z' 'N-ZA-Mn-za-m' - This script encodes and decodes text using the rot13 encryption.
-16. paste -d'\n' - - | cut -f1 - This script prints every other line from the input (odds), starting with the first line.
+16. paste - - | cut -f 1 - This script prints every other line from the input (odds), starting with the first line.
 17. 
