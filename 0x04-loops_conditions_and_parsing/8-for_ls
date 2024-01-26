@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+#   displays the content of the current directory
+#   without delim char '-', using for loop
+
+for each_file in *;
+do
+    if [[ ! "$each_file" == .* ]];
+    then
+        echo "$each_file" | cut -d '-' -f2-
+    fi
+done
