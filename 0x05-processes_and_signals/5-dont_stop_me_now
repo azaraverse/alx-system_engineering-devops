@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 #   bash script that stops 4-to_infinity_process
-file_to_kill=$(pgrep -f "4-to_infinity_process")
+file_to_kill=$(pgrep -f to_infinity_process)
 kill "$file_to_kill"
