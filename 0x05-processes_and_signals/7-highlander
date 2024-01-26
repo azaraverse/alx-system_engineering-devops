@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+#   bash script that displays `message` indefinitely
+function sigterm_handler
+{
+    echo "I am invincible!!!"
+}
+
+trap sigterm_handler SIGTERM
+
+while true;
+do
+    echo "To infinity and beyond"
+    sleep 2
+done
