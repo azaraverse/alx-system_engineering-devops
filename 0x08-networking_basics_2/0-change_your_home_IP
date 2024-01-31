@@ -4,5 +4,5 @@
 #+	`facebook.com` resolving to `8.8.8.8`
 cp /etc/hosts ~/hosts.n
 echo "127.0.0.2	localhost" > ~/hosts.n
-echo "8.8.8.8		facebook.com" >> ~/hosts.n
+echo "8.8.8.8	facebook.com" >> ~/hosts.n
 cat ~/hosts.n > /etc/hosts
