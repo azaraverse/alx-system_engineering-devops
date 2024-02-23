@@ -1,13 +1,13 @@
 # Distributed Web Infrastructure
 
-<a href="https://github.com/gitloper-azara/alx-system_engineering-devops/blob/d9e16d898eabc45d8897042beedb57321d348f73/0x09-web_infrastructure_design/1-distributed_web_infrastructure.jpg" target="_blank" img src="https://github.com/gitloper-azara/alx-system_engineering-devops/blob/d9e16d898eabc45d8897042beedb57321d348f73/0x09-web_infrastructure_design/1-distributed_web_infrastructure.jpg"></a>
+<a href="https://github.com/gitloper-azara/alx-system_engineering-devops/blob/d9e16d898eabc45d8897042beedb57321d348f73/0x09-web_infrastructure_design/1-distributed_web_infrastructure.jpg" target="_blank"><img src="https://github.com/gitloper-azara/alx-system_engineering-devops/blob/d9e16d898eabc45d8897042beedb57321d348f73/0x09-web_infrastructure_design/1-distributed_web_infrastructure.jpg"></a>
 
 # Additional Elements
 - __Servers__: The additional *servers* provide redundancy and scalability, ensuring that the website remains available even if one server fails.
 
 - __Load Balancer__: The *load balancer* distributes incoming traffic across the various servers to prevent any single server from becoming overwhelmed with requests.
 
-    - ## Setup
+- ## Setup
     HAproxy will distribute incoming traffic across multiple servers to ensure load balancing and high availability.
 
     HAproxy will be configured with round-robin distribution algorithm so that each new request will be routed by the algorithm to the next server in line, distributing the load evenly among all available servers.
