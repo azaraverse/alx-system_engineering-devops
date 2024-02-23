@@ -1,4 +1,6 @@
 # Single Server Design
+
+<a href="" target="_blank"><img src="https://github.com/gitloper-azara/alx-system_engineering-devops/blob/f6fb6d59ccfc85afe154208396ccc06088195e62/0x09-web_infrastructure_design/0-simple_web_stack.jpg"></a>
 - The server ***(Linux Server: 8.8.8.8)*** is the physical or virtual machine that hosts and serves the website `www.foobar.com`. It runs the necessary software stacks, including the web server, application server and database.
 
 - The ***domain name*** serves as a human-readable address for the website. It allows the user to access the site using a memorable name instead of an IP address.
