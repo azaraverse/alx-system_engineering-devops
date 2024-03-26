@@ -1,0 +1,3 @@
+IdentityFile ~/.ssh/school
+PreferredAuthentication publickey
+PasswordAuthentication no
