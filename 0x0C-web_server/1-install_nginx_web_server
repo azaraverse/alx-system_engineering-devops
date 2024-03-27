@@ -8,6 +8,9 @@ apt-get install -y nginx
 # config nginx to listen on port 80
 sed -i 's/#listen 80/listen 80/' /etc/nginx/sites-available/default
 
+# create a temp index.html file
+echo "Hello World!" > /var/www/html/index.html
+
 # start/restart nginx
 service nginx start
 
@@ -16,6 +19,3 @@ if [[ ! $? ]]; then
     echo "Error: Nginx failed to start."
     exit 1
 fi
-
-# create a temp index.html file
-echo "Hello World!" > /var/www/html/index.html
