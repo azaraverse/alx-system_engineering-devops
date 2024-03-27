@@ -29,13 +29,13 @@ server {
 EOF
 
 # use sed to include config block in the default file
-sed -i '/listen 80 default_server;r '"$temp_file" /etc/nginx/sites-available/default
+sed -i "/listen 80 default_server/r $temp_file" /etc/nginx/sites-available/default
 
 # remove temp file
 rm "$temp_file"
 
 # start/restart nginx
-service nginx restart
+service nginx start
 
 # if nginx fails to run
 if [[ ! $? ]]; then
