@@ -7,8 +7,8 @@ apt-get install -y nginx
 
 # config nginx to redirect to a new page (moved permanently)
 # store config in a temp file first
-temp_file=$(temp_config)
-cat <<EOF > $temp_file
+temp_file=$(mktemp)
+cat <<EOF > "$temp_file"
 server {
     listen 80 default_server;
     listen [::]:80 default_server;
@@ -29,10 +29,10 @@ server {
 EOF
 
 # use sed to include config block in the default file
-sed -i '/listen 80 default_server;r '$temp_file /etc/nginx/sites-available/default
+sed -i '/listen 80 default_server;r '"$temp_file" /etc/nginx/sites-available/default
 
 # remove temp file
-rm $temp_file
+rm "$temp_file"
 
 # start/restart nginx
 service nginx restart
