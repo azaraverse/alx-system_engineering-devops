@@ -1,0 +1,39 @@
+#!/usr/bin/env bash
+# a script that configures a new Ubuntu machine to install nginx web server
+
+# update the package index and install Nginx
+apt-get update
+apt-get install -y nginx
+
+# config nginx to redirect to a new page (moved permanently)
+cat <<EOF > /etc/nginx/sites-available/default
+server {
+    listen 80 default_server;
+    listen [::]:80 default_server;
+
+    root /var/www/html;
+    index index.html index.htm;
+
+    server_name _;
+
+    location /redirect_me {
+        return 301 https://www.facebook.com/yushahuazara?mibextid=ZbWKwL;
+    }
+
+    location / {
+        try_files $uri $uri/ = 404;
+    }
+}
+EOF
+
+# start/restart nginx
+service nginx restart
+
+# if nginx fails to run
+if [[ ! $? ]]; then
+    echo "Error: Nginx failed to restart."
+    exit 1
+fi
+
+# create a temp index.html file
+echo "Hello World!" > /var/www/html/index.html
