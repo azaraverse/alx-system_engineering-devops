@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+# custom 404 page that displays a custom text
+
+# install nginx
+apt-get update
+apt-get install -y nginx
+
+# create custom 404 page with custom content
+echo 'Ceci n'"'"'est pas une page' > /usr/share/nginx/html/custom_404.html
+
+# configure nginx to use the custom 404 page
+cat <<EOF > /etc/nginx/sites-available/default
+server {
+    listen 80 default_server;
+    listen [::]:80 default_server;
+
+    root /usr/share/nginx/html;
+    index index.html index.htm;
+
+    server_name _;
+    error_page 404 /custom_404.html;
+
+    location / {
+        try_files \$uri \$uri/ =404;
+    }
+}
+EOF
+
+# restart nginx
+service nginx restart
