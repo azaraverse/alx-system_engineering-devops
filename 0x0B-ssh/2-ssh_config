@@ -1,2 +1,4 @@
-IdentityFile ~/.ssh/school
-PasswordAuthentication no
+Host *
+    PubkeyAuthentication yes
+    PasswordAuthentication no
+    IdentityFile ~/.ssh/school
