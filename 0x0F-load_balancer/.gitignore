@@ -1,0 +1,5 @@
+# all redud files not needed
+0-transfer_file
+7-puppet_install_nginx_web_server.pp
+install_puppet_config
+*.sh
