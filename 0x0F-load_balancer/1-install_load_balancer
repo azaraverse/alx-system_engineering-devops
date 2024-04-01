@@ -1,0 +1,34 @@
+#!/usr/bin/env bash
+# installs and configures HAProxy load balancer
+
+# install HAproxy
+apt-get update
+apt-get install -y haproxy
+
+# define config files
+config_file="/etc/haproxy/haproxy.cfg"
+backup="/etc/haproxy/haproxy.cfg.bak"
+
+# make backup of original config file
+cp "$config_file" "$backup"
+
+grep -q "ENABLED" /etc/default/haproxy
+status=$?
+if [[ status -ne 0 ]]; then
+    # enable HAproxy service
+    echo "ENABLED=1" >> /etc/default/haproxy
+fi
+
+# check if same config data exists in configuration file
+grep -q -e "frontend_node" -e "web_servers" "$config_file"
+staus=$?
+if [[ $staus -ne 0 ]]; then
+    # insert configuration for traffic transmission to desired servers
+    echo -e "\nfrontend frontend_node\n\tmode http\n\tbind :80\n\tdefault_backend web_servers\n\nbackend web_servers\n\tmode http\n\tbalance roundrobin\n\tserver 444898-web-01 52.91.147.223:80 check\n\tserver 444898-web-02 18.210.33.113:80 check\n" >> "$config_file"
+else
+    echo "Data exists!"
+    exit
+fi
+
+# restart HAproxy
+service haproxy restart
