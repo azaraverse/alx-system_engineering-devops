@@ -15,12 +15,15 @@ package { $nginx_package:
 }
 
 # define the path to the configuration file
-$config_file = '/etc/nginx/conf.d/custom_headers.conf'
+$config_file = '/etc/nginx/sites-available/default'
 
 # add custom header within configuration file
-file { $config_file:
-    ensure  => present,
-    content => "add_header X-Served-By \$hostname;\n"
+file_line { custom_header:
+    path    => $config_file,
+    match   => '^server {',
+    line    => '\tadd_header X-Served-By $hostname;',
+    after   => 'server_name _;',
+    ensure  => present
 }
 
 # restart nginx
