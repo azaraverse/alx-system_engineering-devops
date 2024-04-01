@@ -27,7 +27,6 @@ if [[ $staus -ne 0 ]]; then
     echo -e "\nfrontend frontend_node\n\tmode http\n\tbind :80\n\tdefault_backend web_servers\n\nbackend web_servers\n\tmode http\n\tbalance roundrobin\n\tserver 444898-web-01 52.91.147.223:80 check\n\tserver 444898-web-02 18.210.33.113:80 check\n" >> "$config_file"
 else
     echo "Data exists!"
-    exit
 fi
 
 # restart HAproxy
