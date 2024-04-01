@@ -27,7 +27,7 @@ file_line { custom_header:
 }
 
 # restart nginx
-service {
+service { $nginx_service:
     ensure  => running,
     enable  => true
 }
