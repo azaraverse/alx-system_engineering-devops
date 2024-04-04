@@ -1,2 +1,7 @@
 # ignore sh files
 *.sh
+
+# more scripts
+0-transfer_file
+terminate_ssl
+replace_config_data
