@@ -1,0 +1,31 @@
+#!/usr/bin/env bash
+# a bash script that displays information about subdomains
+
+display_info() {
+    local domain="$1"
+    local subdomain="$2"
+
+    # if subdomain is not provided, then set default subdomains
+    if [ -z "$subdomain" ]; then
+        subdomains=("www" "lb-01" "web-01" "web-02")
+    else
+        subdomains=("$subdomain")
+    fi
+
+    for sub in "${subdomains[@]}"; do
+        # fetch DNS info and print using awk
+        dns_info=$(dig +short "$sub"."$domain" | awk '{ print $1 }')
+        record_type=$(dig "$sub"."$domain" | grep -A1 'ANSWER SECTION' | tail -1 | awk '{print $4}')
+        echo "The subdomain $sub is a $record_type record and points to $dns_info"
+    done
+}
+
+# check if both domain and subdomain are provided
+if [ "$#" -eq 2 ]; then
+    display_info "$1" "$2"
+elif [ "$#" -eq 1 ]; then
+    display_info "$1"
+else
+    echo "Usage: $0 domain [subdomain]"
+    exit 1
+fi
