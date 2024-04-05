@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+# configures a sever or ubuntu container to listen on port 80 of all active IPv4 IPs
+
+# update repositories and install nginx
+apt-get update
+apt-get install -y nginx
+
+# check if nginx is running
+if ! service nginx status >/dev/null 2>&1; then
+    service nginx start
+fi
+
+config_path='/etc/nginx/sites-available/default'
+
+# verify nginx configuration file for listening on port 80
+if ! grep -q "listen 80;" "$config_path"; then
+    sed -i 's/listen [::]:80 default_server;/listen 80 default_server;/' "$config_path"
+fi
+
+# restart nginx service
+service nginx restart
