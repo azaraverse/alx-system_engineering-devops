@@ -1,2 +1,5 @@
 # executable
 *.sh
+
+# redud file containing script output
+1
