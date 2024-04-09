@@ -1,10 +1,11 @@
 #!/usr/bin/env bash
 # configures a sever or ubuntu container to listen on port 80 of all active IPv4 IPs
 
-config_path='/etc/nginx/sites-enabled/default'
+# remove default config file then create symlink to sites-enabled
+rm /etc/nginx/sites-enabled/default
 
-# verify nginx configuration file for listening on port 80
-sed -i 's/8080 default_server/80 default_server/' "$config_path"
+# symlink creation
+ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
 
 # restart nginx service
 service nginx restart
