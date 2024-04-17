@@ -2,3 +2,8 @@
 0-transfer_file
 install_mysql_5_7_25
 git_render.sh
+
+# sql scrips
+setup_user_web_servers.sql
+first_database.sql
+replica_user.sql
