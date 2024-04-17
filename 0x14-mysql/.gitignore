@@ -1,0 +1,4 @@
+# ignore these executables
+0-transfer_file
+install_mysql_5_7_25
+git_render.sh
