@@ -1,0 +1,5 @@
+# ignore executable
+*.sh
+
+# directories and sub
+__pycache__/
