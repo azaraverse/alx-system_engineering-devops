@@ -18,29 +18,13 @@ def get_todo_progress(employee_id):
     # raise stored HTTPError, if one occured
     employee_info.raise_for_status()
     employee_data = employee_info.json()
-    employee_name = employee_data.get("name")
+    employee_name = employee_data.get("username")
     # rectified error: "" instead of ''
 
     # fetch todos for employee
     todos = requests.get(f'{api_url}/users/{employee_id}/todos')
     todos.raise_for_status()
     todos_data = todos.json()
-
-    # count completed and total tasks
-    total_tasks = len(todos_data)
-    completed_tasks = 0
-    for todo in todos_data:
-        if todo.get("completed"):  # rectified error: "" instead of ''
-            completed_tasks += 1
-
-    # display progress
-    print(
-        f'Employee {employee_name} is done with tasks'
-        f'({completed_tasks}/{total_tasks}):'
-    )
-    for todo in todos_data:
-        if todo.get("completed"):  # rectified error: "" instead of ''
-            print(f"\t {todo.get('title')}")
 
     # handle exportation to CSV here
     filename = f'{employee_id}.csv'
