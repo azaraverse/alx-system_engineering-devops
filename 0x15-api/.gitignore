@@ -1,5 +1,6 @@
 # ignore executable
 *.sh
+*.csv
 
 # directories and sub
 __pycache__/
