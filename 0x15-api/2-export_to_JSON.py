@@ -2,7 +2,6 @@
 '''A python script that returns info about an employees' TODO list
 progress
 '''
-import csv
 import json
 import requests
 
