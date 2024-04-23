@@ -46,9 +46,6 @@ def get_todo_progress(employee_id):
     filename = f'{employee_id}.csv'
     with open(filename, 'w', encoding='UTF-8') as csv_file:
         csv_write = csv.writer(csv_file, quoting=csv.QUOTE_ALL)
-        csv_write.writerow(
-            ['USER_ID', 'USERNAME', 'TASK_COMPLETED_STATUS', 'TASK_TITLE']
-            )
         for todo in todos_data:
             csv_write.writerow(
                 [
