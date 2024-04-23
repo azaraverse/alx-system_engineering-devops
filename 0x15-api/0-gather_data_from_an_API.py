@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-'''A python script that returns info about an employees' TODO list
+'''A python script that returns info about an employee's TODO list
 progress
 '''
 import requests
@@ -12,7 +12,7 @@ def get_todo_progress(employee_id):
         employee_id (int): Employee ID
     '''
     # fetch employee info
-    api_url = f'https://jsonplaceholder.typicode.com'
+    api_url = 'https://jsonplaceholder.typicode.com'
     employee_info = requests.get(f'{api_url}/users/{employee_id}')
     # raise stored HTTPError, if one occured
     employee_info.raise_for_status()
