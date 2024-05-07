@@ -3,6 +3,7 @@ __pycache__/
 
 # redud main files
 *main.py
+*.txt
 
 # executables
 *.sh

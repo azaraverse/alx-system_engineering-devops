@@ -9,9 +9,9 @@ def number_of_subscribers(subreddit):
 
     Args:
         subreddit (str): subreddit to use for querying total subscribers
-    Returns
-      (int) total number of subscribers to the subreddit
-      (int) 0 if not a valid subreddit
+    Returns:
+        (int) total number of subscribers to the subreddit
+        (int) 0 if not a valid subreddit
     '''
     url = 'https://api.reddit.com/r/'
     headers = {'User-Agent': 'my-custom-header/0.0.1'}
