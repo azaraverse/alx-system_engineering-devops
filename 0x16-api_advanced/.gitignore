@@ -1,0 +1,8 @@
+# python directories and its content
+__pycache__/
+
+# redud main files
+*main.py
+
+# executables
+*.sh
