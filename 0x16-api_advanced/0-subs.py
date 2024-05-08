@@ -16,7 +16,7 @@ def number_of_subscribers(subreddit):
     # GET /r/subreddit/about
     # Return information about the subreddit.
     # Data includes the subscriber count, description, and header image.
-    url = 'https://api.reddit.com/r/'
+    url = 'https://www.reddit.com/r/'
     headers = {'User-Agent': 'MyUbuntu/1.0 (Linux; U; en-US; Python)'}
 
     response = requests.get(
