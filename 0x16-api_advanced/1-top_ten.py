@@ -27,7 +27,7 @@ def top_ten(subreddit):
         hot_10_children = hot_10.get("children", [])
         try:
             for data in hot_10_children:
-                # 11 titles may be printed when there is a pinned post on
+                # extra titles may be printed when there is a pinned post
                 # the subreddit
                 top_ten_data = data.get("data")
                 print(top_ten_data.get("title"))
