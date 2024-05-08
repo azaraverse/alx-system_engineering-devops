@@ -16,19 +16,14 @@ def number_of_subscribers(subreddit):
     # GET /r/subreddit/about
     # Return information about the subreddit.
     # Data includes the subscriber count, description, and header image.
-    url = 'https://www.reddit.com/r/{}/about.json'.format(subreddit)
-    header = {'User-Agent': 'MyUbuntu/1.0 (Linux; U; en-US; Python)'}
+    url = f'https://www.reddit.com/r/{subreddit}/about.json'
+    headers = {'User-Agent': 'MyUbuntu/1.0 (Linux; U; en-US; Python)'}
 
-    response = requests.get(url, headers=header, allow_redirects=False)
-    if response.status_code != 200:
-        return 0
     try:
-        dictionary = response.json()
-    except ValueError:
+        response = requests.get(url, headers=headers, allow_redirects=False)
+        response.raise_for_status()  # Raise an exception for HTTP errors
+        data = response.json().get('data', {})
+        subscribers = data.get('subscribers', 0)
+        return subscribers
+    except (requests.RequestException, ValueError, KeyError):
         return 0
-    data = dictionary.get("data")
-    if data:
-        subscribers = data.get("subscribers")
-        if subscribers:
-            return subscribers
-    return 0
