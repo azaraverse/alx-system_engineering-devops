@@ -20,7 +20,8 @@ def number_of_subscribers(subreddit):
     headers = {'User-Agent': 'MyUbuntu/1.0 (Linux; U; en-US; Python)'}
 
     response = requests.get(
-        f'{url}{subreddit}/about', headers=headers, allow_redirects=False
+        f'{url}{subreddit}/about.json', headers=headers,
+        allow_redirects=False
         )
     if response.status_code != 200:
         return 0
@@ -29,4 +30,8 @@ def number_of_subscribers(subreddit):
     except ValueError:
         return 0
     data = dictionary.get("data")
-    return data.get("subscribers")
+    if data:
+        subscribers = data.get("subscribers")
+        if subscribers:
+            return subscribers
+    return 0
