@@ -13,6 +13,9 @@ def number_of_subscribers(subreddit):
         (int) total number of subscribers to the subreddit
         (int) 0 if not a valid subreddit
     '''
+    # GET /r/subreddit/about
+    # Return information about the subreddit.
+    # Data includes the subscriber count, description, and header image.
     url = 'https://api.reddit.com/r/'
     headers = {'User-Agent': 'my-custom-header/0.0.1'}
 
