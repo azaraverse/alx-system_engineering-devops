@@ -10,7 +10,7 @@ def top_ten(subreddit):
     Args:
         subreddit (str): subreddit to use for querying top ten hot posts
     Returns:
-        Titles of top 10 hot posts
+        None when there are no hot posts available
     '''
     url = 'https://api.reddit.com/r/'
     headers = {'User-Agent': 'my-custom-header/0.0.1'}
@@ -25,8 +25,12 @@ def top_ten(subreddit):
         dictionary = response.json()
         hot_10 = dictionary.get("data", {})
         hot_10_children = hot_10.get("children", [])
-        if len(hot_10_children) == 0:
-            print('None')
-        for data in hot_10_children:
-            top_ten_data = data.get("data")
-            print(top_ten_data.get("title"))
+        try:
+            for data in hot_10_children:
+                # 11 titles may be printed when there is a pinned post on
+                # the subreddit
+                top_ten_data = data.get("data")
+                print(top_ten_data.get("title"))
+        except (requests.RequestException):
+            if len(hot_10_children) == 0:
+                print('None')
