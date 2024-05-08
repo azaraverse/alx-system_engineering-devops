@@ -29,14 +29,14 @@ def recurse(subreddit, hot_list=[], after=''):
         return None
 
     dictionary = response.json()
-    data = dictionary.get("data")
-    posts = data.get("children")
-    after = data.get("after")
+    data = dictionary["data"]
+    posts = data["children"]
+    after = data["after"]
 
     try:
         for post in posts:
-            store_in_hot_list = post.get("data")
-            hot_list.append(store_in_hot_list.get("title"))
+            store_in_hot_list = post["data"]
+            hot_list.append(store_in_hot_list["title"])
 
         if after:
             return recurse(subreddit, hot_list, after)

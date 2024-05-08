@@ -23,14 +23,14 @@ def top_ten(subreddit):
         print('None')
     else:
         dictionary = response.json()
-        hot_10 = dictionary.get("data", {})
-        hot_10_children = hot_10.get("children", [])
+        hot_10 = dictionary["data"]
+        hot_10_children = hot_10["children"]
         try:
             for data in hot_10_children:
                 # extra titles may be printed when there is a pinned post
                 # the subreddit
-                top_ten_data = data.get("data")
-                print(top_ten_data.get("title"))
+                top_ten_data = data["data"]
+                print(top_ten_data["title"])
         except (requests.RequestException):
             if len(hot_10_children) == 0:
                 print('None')
