@@ -33,11 +33,15 @@ def recurse(subreddit, hot_list=[], after=''):
     posts = data.get("children")
     after = data.get("after")
 
-    for post in posts:
-        store_in_hot_list = post.get("data")
-        hot_list.append(store_in_hot_list.get("title"))
+    try:
+        for post in posts:
+            store_in_hot_list = post.get("data")
+            hot_list.append(store_in_hot_list.get("title"))
 
-    if after:
-        return recurse(subreddit, hot_list, after)
-    else:
-        return hot_list if hot_list else None
+        if after:
+            return recurse(subreddit, hot_list, after)
+        else:
+            return hot_list if hot_list else None
+    except (requests.RequestException):
+        if (len(posts)) == 0:
+            return None
