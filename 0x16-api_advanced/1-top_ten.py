@@ -13,7 +13,7 @@ def top_ten(subreddit):
         None when there are no hot posts available
     '''
     url = 'https://api.reddit.com/r/'
-    headers = {'User-Agent': 'my-custom-header/0.0.1'}
+    headers = {'User-Agent': 'MyUbuntu/1.0 (Linux; U; en-US; Python)'}
 
     response = requests.get(
         f'{url}{subreddit}/hot?limit=10', headers=headers,

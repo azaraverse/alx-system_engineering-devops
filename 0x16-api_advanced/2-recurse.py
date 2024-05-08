@@ -1,4 +1,4 @@
-#!/bin/usr/python3
+#!/usr/bin/python3
 '''Queries the Reddit API and returns a list containing the titles of all
 hot articles for a given subreddit recursively
 '''
@@ -18,7 +18,7 @@ def recurse(subreddit, hot_list=[], after=''):
         of no results are found.
     '''
     url = 'https://api.reddit.com/r/'
-    headers = {'User-Agent': 'my-custom-header/0.0.1'}
+    headers = {'User-Agent': 'MyUbuntu/1.0 (Linux; U; en-US; Python)'}
 
     response = requests.get(
         f'{url}{subreddit}/hot?after={after}', headers=headers,
