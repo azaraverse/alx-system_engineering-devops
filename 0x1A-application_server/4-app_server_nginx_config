@@ -1,0 +1,42 @@
+
+server {
+        listen 80 default_server;
+        listen [::]:80 default_server;
+
+        location /hbnb_static/ {
+                alias /data/web_static/current/;
+                autoindex off;
+        }
+
+        location /airbnb-onepage/ {
+                include proxy_params;
+                proxy_pass http://0.0.0.0:5000/airbnb-onepage/;
+        }
+
+        location ~ /airbnb-dynamic/number_odd_or_even/([0-9]+)$ {
+                include proxy_params;
+                proxy_pass http://0.0.0.0:5001/number_odd_or_even/$1;
+        }
+
+        location /api/ {
+                include proxy_params;
+                proxy_pass http://0.0.0.0:5002/api/;
+        }
+
+    root /var/www/html;
+    index index.html index.htm;
+
+    server_name _;
+        add_header X-Served-By $hostname;
+
+    location /redirect_me {
+        return 301 https://www.facebook.com/yushahuazara?mibextid=ZbWKwL;
+    }
+
+    error_page 404 /404.html;
+
+    location = /404.html {
+        root /usr/share/nginx/html;
+        internal;
+    }
+}
