@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# reloads gunicorn gracefully without service interruptions
+pkill -HUP gunicorn
