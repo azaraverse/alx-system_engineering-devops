@@ -1,0 +1,64 @@
+server {
+        listen 80 default_server;
+        listen [::]:80 default_server;
+
+        # serve static content
+        location /hbnb_static/ {
+                alias /data/web_static/current/;
+                autoindex off;
+        }
+
+        # reverse proxy for AirBnB onepage
+        location /airbnb-onepage/ {
+                include proxy_params;
+                proxy_pass http://0.0.0.0:5000/airbnb-onepage/;
+        }
+
+        # reverse proxy for dynamic content
+        location ~ /airbnb-dynamic/number_odd_or_even/([0-9]+)$ {
+                include proxy_params;
+                proxy_pass http://0.0.0.0:5001/number_odd_or_even/$1;
+        }
+
+        # reverse proxy for API
+        location /api/ {
+                include proxy_params;
+                proxy_pass http://0.0.0.0:5002/api/;
+        }
+
+        # reverse proxy for 2-hbnb.py on Gunicorn
+        location / {
+                include proxy_params;
+                proxy_pass http://0.0.0.0:5003/2-hbnb/;
+                # return 301 https://www.muqitazara.tech/;
+        }
+
+        # serve static css and javascript files
+        location ~* \.(css|js)$ {
+                root /home/ubuntu/AirBnB_clone_v4/web_dynamic/;
+        }
+
+        # serve static image files
+        location ~* \.(jpeg|jpg|png|gif|ico)$ {
+                root /home/ubuntu/AirBnB_clone_v4/web_dynamic/;
+        }
+
+        # additional server configurations
+        # root /var/www/html;
+        root /home/ubuntu/AirBnB_clone_v4/web_dynamic/;
+        # index index.html;
+
+        server_name _;
+        add_header X-Served-By $hostname;
+
+        location /redirect_me {
+                return 301 https://www.facebook.com/yushahuazara?mibextid=ZbWKwL;
+        }
+
+        error_page 404 /404.html;
+
+        location = /404.html {
+                root /usr/share/nginx/html;
+                internal;
+        }
+}
