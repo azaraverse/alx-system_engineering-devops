@@ -11,13 +11,14 @@ server {
         # reverse proxy for AirBnB onepage
         location /airbnb-onepage/ {
                 include proxy_params;
-                proxy_pass http://0.0.0.0:5000/airbnb-onepage/;
+                proxy_pass http://0.0.0.0:5000;
         }
 
         # reverse proxy for dynamic content
-        location ~ /airbnb-dynamic/number_odd_or_even/([0-9]+)$ {
+        location /airbnb-dynamic/number_odd_or_even/ {
                 include proxy_params;
-                proxy_pass http://0.0.0.0:5001/number_odd_or_even/$1;
+                proxy_pass http://0.0.0.0:5001;
+                rewrite ^/airbnb-dynamic/number_odd_or_even/([0-9]+)$ /number_odd_or_even/$1 break;
         }
 
         # reverse proxy for API
